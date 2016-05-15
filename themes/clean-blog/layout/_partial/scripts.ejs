@@ -1,0 +1,11 @@
+<%- js('js/jquery/jquery.min.js') %>
+<%- js('js/typed/typed.min.js') %>
+<script>
+  $(document).ready(function(){
+    $(".heading_typed").typed({
+      strings: ["<%= config.author %>"],
+      typeSpeed: 100,
+      showCursor: false,
+    });
+  });
+</script>

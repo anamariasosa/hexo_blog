@@ -1,0 +1,26 @@
+<% if (type == "page") { %>
+  <%- partial('_partial/header', {type: "page"})%>
+<% } else { %>
+  <%- partial('_partial/header', {type: "post"})%>
+<% } %>
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <% if (page.image) {%>
+        <img src="<%- page.image %>" alt="" class="post_image"/>
+        <% } %>
+        <%- page.content %>
+        <div id="share_modal">
+            <div class="wrap">
+              <div class="inner">
+                <h4>¡Compártelo en Twitter!</h4>
+                <a href="https://twitter.com/intent/tweet?text=<%- page.title %>&url=<%- page.permalink %>&via=<%- config.social.twitter %>&related=<%- config.social.twitter %>" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</article>
+<hr>

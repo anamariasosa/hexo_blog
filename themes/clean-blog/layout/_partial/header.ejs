@@ -1,0 +1,27 @@
+<header class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <% if (type == "page" ) {%>
+            <h1> About Me</h1>
+            <hr class="small">
+            <span class="subheading">This is what I do.</span>
+            <% } else if (type == "post") {%>
+            <h1><%- page.title %></h1>
+            <span class="meta">Posted by
+              <a href="/about">
+                <%= config.author %>
+              </a>
+              on <%= date(page.date, 'MMMM Do YYYY') %>
+            </span>
+            <% } else {%>
+            <h1 class="heading_typed"></h1>
+            <hr class="small">
+            <span class="subheading"><%= config.subtitle %></span>
+            <% } %>
+          </div>
+      </div>
+    </div>
+  </div>
+</header>

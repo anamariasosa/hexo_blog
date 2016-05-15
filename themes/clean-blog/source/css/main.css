@@ -1,0 +1,16 @@
+.intro-header {
+  background-color: #4ADBD0;
+  background-image:
+}
+.next {
+  float: right;
+}
+
+.prev {
+  float: left;
+}
+
+.post_image {
+  width: 100%;
+  text-align: center;
+}

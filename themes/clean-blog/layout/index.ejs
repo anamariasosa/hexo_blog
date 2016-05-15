@@ -1,0 +1,48 @@
+<%- partial('_partial/header', {type : ""}) %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <% page.posts.each(function(post){ %>
+        <div class="post-preview">
+          <a href="<%- url_for(post.path) %>">
+            <h2 class="post-title">
+              <%= post.title %>
+            </h2>
+            <h3 class="post-subtitle">
+              <% if(post.description) { %>
+                <%- post.description %>
+              <% } %>
+            </h3>
+          </a>
+          <p class="post-meta">
+            Posted by
+            <a href="/about"> <%= config.author %> </a>
+            on <%= date(post.date, 'MMMM Do YYYY') %>
+          </p>
+        </div>
+        <hr>
+      <% }) %>
+          <!-- Pager -->
+      <ul class="pager">
+        <% if (page.prev) { %>
+          <li class="prev">
+            <% if (page.prev === 1) { %>
+              <a class="btn" href="<%- url_for(' ') %>">
+            <% } else { %>
+              <a class="btn" href="<%- url_for(page.prev_link) %>">
+            <% } %>
+                <span>Newer Posts &#8592;</span>
+              </a>
+          </li>
+        <% } %>
+        <% if (page.next) { %>
+          <li class="next">
+            <a class="btn" href="<%- url_for(page.next_link) %>">
+              <span>Older Posts &#8594;</span>
+            </a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</div>
