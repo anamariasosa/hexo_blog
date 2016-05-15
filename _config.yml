@@ -79,4 +79,5 @@ theme: clean-blog
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+  type: heroku
+  repo: https://git.heroku.com/anamariasosa.git
