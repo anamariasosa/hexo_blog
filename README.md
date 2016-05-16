@@ -4,7 +4,7 @@
 To run this project
 
 ```cd mi_blog && npm install```
-```hexo server```
+```&& hexo server```
 
 
 #### Prerequisites
